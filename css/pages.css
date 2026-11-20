@@ -1,0 +1,41 @@
+/* civicshield/css/pages.css */
+/* Landing + database + guide page styles (extends styles.css) */
+a.btn{text-decoration:none}
+.btn.line{background:transparent;color:var(--text);border-color:var(--border)}
+.btn.line:hover{border-color:var(--primary);background:var(--soft)}
+.lhero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:56px 0 24px}
+.lhero h1{text-align:left}.lhero .lead{margin:0 0 24px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.lhero .scan{margin:28px 0 0;max-width:none}
+.pv{max-width:420px;margin:0 auto;text-align:center}
+.pv svg{width:100%;display:block}
+.pv .n{margin-top:-52px;position:relative}
+.strip{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;padding:18px 24px;margin-top:36px;font-weight:600}
+.steps,.feat{display:grid;gap:20px}
+.steps{grid-template-columns:repeat(3,1fr)}.feat{grid-template-columns:repeat(4,1fr)}
+.num{display:inline-grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;margin-bottom:10px}
+.ico{font-size:1.9rem;display:block;margin-bottom:6px}
+.steps h3,.feat h3{margin:0 0 6px;font-size:1.1rem}.steps p,.feat p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.band{background:var(--primary);color:#fff;border-radius:28px;padding:48px 24px;text-align:center;margin-top:48px}
+.band h2{font-size:clamp(1.6rem,4vw,2.4rem);margin:0 0 10px}.band p{margin:0 0 22px;opacity:.92}
+.band .btn{background:#fff;color:#1D4ED8;border-color:#fff}
+.faq p{padding:0 22px 16px;margin:0;color:var(--muted)}.faq details{margin-top:12px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 12px}
+.toolbar input,.toolbar select{font:inherit;color:var(--text);background:var(--card);border:2px solid var(--border);border-radius:14px;min-height:56px;padding:0 14px}
+.toolbar input{flex:1;min-width:220px}.toolbar input:focus-visible,.toolbar select:focus-visible{outline-offset:2px}
+.dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.dcard h3{margin:10px 0 6px;font-size:1.2rem}.dcard p{margin:0 0 12px;color:var(--muted)}
+.tag{display:inline-block;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;background:var(--soft);margin-right:6px}
+.r-high{color:var(--bad-t)}.r-medium{color:var(--warn-t)}
+.dcard summary{min-height:48px;padding:12px 18px;font-size:.95rem}
+.dcard .more{padding:12px 4px 0}.dcard ul{margin:6px 0 12px;padding-left:20px}
+.dcard .ex{display:block;font-family:"JetBrains Mono",monospace;font-size:.85rem;background:var(--soft);padding:8px 12px;border-radius:10px;word-break:break-all;margin:6px 0 12px}
+@media(max-width:980px){.lhero,.split{grid-template-columns:1fr}.steps,.dgrid{grid-template-columns:1fr}.feat{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.feat{grid-template-columns:1fr}}
+
+/* Guide page */
+.guide-list{margin:0;padding-left:1.3em}.guide-list li{margin-bottom:8px}
+.callout{border-left:6px solid var(--primary)}
+.guide-acc .more{padding:4px 22px 16px}.guide-acc ul{margin:0;padding-left:20px}.guide-acc li{margin-bottom:6px}
+@media print{#site-header,#site-footer,.cta-row,.band,.toast{display:none!important}body{background:#fff;color:#000}.card{box-shadow:none;border:1px solid #999;break-inside:avoid}}

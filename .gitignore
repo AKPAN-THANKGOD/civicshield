@@ -1,0 +1,6 @@
+# civicshield/.gitignore
+node_modules/
+server/*.db
+server/*.db-wal
+server/*.db-shm
+.env

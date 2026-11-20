@@ -1,0 +1,72 @@
+<!-- civicshield/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CivicShield: Is this link, number, or email safe?</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="home">
+<div id="site-header"></div>
+<main class="wrap" id="top">
+<section class="lhero">
+ <div><span class="badge">Free public safety tool</span>
+  <h1>Is this link, number, or email safe?</h1>
+  <p class="lead">Paste it below and get a clear safety score in seconds, explained in plain English. No account, no jargon.</p>
+  <form class="scan" action="checker.html" method="get">
+   <label for="t" style="position:absolute;left:-9999px">What are you checking?</label>
+   <select id="t" name="type"><option value="url">🔗 URL / Website</option><option value="phone">📞 Phone Number</option><option value="email">✉️ Email Snippet</option></select>
+   <label for="qq" style="position:absolute;left:-9999px">Paste here</label>
+   <input id="qq" name="q" required autocomplete="off" spellcheck="false" placeholder="Paste here…">
+   <button class="btn" type="submit">🛡️ Scan Now</button>
+  </form>
+  <div class="cta-row" style="margin-top:16px"><a class="btn line" href="#how" style="min-height:52px">How it works</a><a class="btn line" href="database.html" style="min-height:52px">Browse the Scam Database</a></div>
+ </div>
+ <div class="card pv" aria-label="Example result">
+  <span class="badge">Example result</span>
+  <svg viewBox="0 0 240 130" role="img" aria-label="Example gauge showing 38 out of 100"><path d="M20 118A100 100 0 0 1 220 118" fill="none" stroke="var(--border)" stroke-width="22" stroke-linecap="round"/><path d="M20 118A100 100 0 0 1 220 118" fill="none" stroke="var(--bad)" stroke-width="22" stroke-linecap="round" pathLength="100" stroke-dasharray="38 100"/></svg>
+  <div class="n"><div class="score" style="color:var(--bad-t)">38<small>/100</small></div></div>
+  <p><span class="pill" style="color:var(--bad-t)">⛔ Dangerous</span></p>
+  <p style="color:var(--muted);margin:0">Do not enter your password here. The address imitates a bank and ends in a suffix scammers favour.</p>
+ </div>
+</section>
+<div class="card strip"><span>✅ Free to use</span><span>🔒 We don’t store what you check</span><span>🗣️ Plain-English results</span><span>🔠 Adjustable text size</span><span>🌙 Dark mode</span></div>
+
+<section class="sec" id="how"><h2>How it works</h2>
+<div class="steps">
+ <div class="card"><span class="num">1</span><h3>Paste it</h3><p>Choose link, phone number or email text and paste what you received.</p></div>
+ <div class="card"><span class="num">2</span><h3>Get a score</h3><p>We look for known scam patterns and give a score out of 100: green, amber or red.</p></div>
+ <div class="card"><span class="num">3</span><h3>Know what to do</h3><p>You get a short verdict and clear next steps, with no technical knowledge needed.</p></div>
+</div></section>
+
+<section class="sec"><h2>Built for everyone</h2>
+<div class="feat">
+ <div class="card"><span class="ico">🛡️</span><h3>One clear score</h3><p>A large gauge with a text label, so the result never depends on colour alone.</p></div>
+ <div class="card"><span class="ico">💬</span><h3>Plain English</h3><p>The verdict, what to do and community alerts in three short cards.</p></div>
+ <div class="card"><span class="ico">🔠</span><h3>Easy to read</h3><p>Large buttons, high contrast and A− / A+ text size you can change any time.</p></div>
+ <div class="card"><span class="ico">💙</span><h3>Protect loved ones</h3><p>Send a warning by WhatsApp or show a large-print summary to a relative.</p></div>
+</div></section>
+
+<section class="sec"><div class="split">
+ <div><h2>Become a Global Guardian</h2><p style="color:var(--muted)">Every scan and every report earns XP and moves you up the ranks, from Neighborhood Watch to Global Guardian. Small actions that keep others safe.</p><a class="btn" href="checker.html" style="margin-top:8px">Start scanning</a></div>
+ <div class="card guardian"><h3 style="margin-top:0">🌍 Guardian XP</h3><div style="font-weight:800;font-size:1.25rem;color:var(--primary)">Neighborhood Watch</div><div class="bar"><i style="width:62%"></i></div><b>Example: 250 / 400 XP to Senior Watchman</b></div>
+</div></section>
+
+<section class="sec faq"><h2>Questions people often ask</h2>
+ <details><summary>Is CivicShield free?</summary><p>Yes. This demo has no sign-up and no cost.</p></details>
+ <details><summary>What does the Safety Score mean?</summary><p>70 and above looks safe, 40 to 69 is suspicious, and below 40 is dangerous. It is guidance, not a guarantee, so stay careful even with a high score.</p></details>
+ <details><summary>Is my data kept private?</summary><p>What you paste is sent to our server to be checked, and it is not stored. For links, the domain name is looked up with a public registration service, and with Google’s unsafe-sites list if that is switched on. If you report something, only a scrambled hash is saved. Your theme, text size and XP stay on your device.</p></details>
+ <details><summary>Where do the scam patterns come from?</summary><p>The Scam Database is an educational library of common scam types written for this project. It is not a feed of live user reports.</p></details>
+ <details><summary>Does it work on my phone?</summary><p>Yes. The pages resize for phones and tablets.</p></details>
+</section>
+
+<section class="band"><h2>One check today keeps a scam away tomorrow</h2><p>Paste something suspicious and see what we find.</p><a class="btn" href="checker.html">Scan Something Now</a></section>
+</main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+</body>
+</html>

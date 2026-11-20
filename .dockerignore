@@ -1,0 +1,8 @@
+# civicshield/.dockerignore
+node_modules
+server/node_modules
+server/*.db
+server/*.db-wal
+server/*.db-shm
+.git
+.env

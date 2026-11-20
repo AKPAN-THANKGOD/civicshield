@@ -1,0 +1,91 @@
+<!-- civicshield/checker.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Instant Checker | CivicShield</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="checker">
+<div id="site-header"></div>
+<main class="wrap" id="top">
+<section class="hero">
+  <span class="badge">Universal safety checker</span>
+  <h1>Is this link, number, or email safe?</h1>
+  <p class="lead">Paste a suspicious message, link or phone number. Get a clear, plain-English verdict in seconds.</p>
+  <div class="scan" role="search">
+    <label for="type" style="position:absolute;left:-9999px">What are you checking?</label>
+    <select id="type"><option value="url">🔗 URL / Website</option><option value="phone">📞 Phone Number</option><option value="email">✉️ Email Snippet</option></select>
+    <label for="q" style="position:absolute;left:-9999px">Paste here</label>
+    <input id="q" autocomplete="off" spellcheck="false" placeholder="Paste a link here…">
+    <button class="btn" id="go">🛡️ Scan Now</button>
+  </div>
+  <div class="ex">Try an example:
+    <button class="chip" data-t="url" data-v="http://secure-login.bank-verify77.top/update-account">🏦 Fake bank link</button>
+    <button class="chip" data-t="email" data-v="URGENT: your account is suspended. Click here and send your password within 24 hours.">✉️ Scam email</button>
+    <button class="chip" data-t="phone" data-v="+1 900 555 0142">📞 Premium-rate number</button>
+    <button class="chip" data-t="url" data-v="https://www.wikipedia.org">✅ Safe site</button>
+  </div>
+</section>
+
+<div class="grid">
+<div>
+  <section class="card" aria-live="polite" aria-label="Scan result">
+    <div class="target"><div><small>Inspected target</small><b id="tgt">–</b></div><button class="tool" id="copy" aria-label="Copy target">📋</button></div>
+    <div class="res">
+      <div class="gauge">
+        <svg viewBox="0 0 240 130" role="img" aria-label="Safety gauge"><path d="M20 118A100 100 0 0 1 220 118" fill="none" stroke="var(--border)" stroke-width="22" stroke-linecap="round"/><path id="arc" d="M20 118A100 100 0 0 1 220 118" fill="none" stroke="var(--primary)" stroke-width="22" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100" style="transition:stroke-dasharray 1s ease,stroke .4s"/></svg>
+        <div class="n"><div class="score" id="score">–<small>/100</small></div></div>
+      </div>
+      <div><span class="pill" id="pill">Ready</span><h2 id="vh">Paste something to check</h2><p id="vp">Your result will appear here.</p>
+        <div class="facts"><div class="fact"><small>Checks run</small><b id="f1">–</b></div><div class="fact"><small>Warnings found</small><b id="f2">–</b></div><div class="fact"><small>Community reports</small><b id="f3">–</b></div><div class="fact"><small>Main concern</small><b id="f4">–</b></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="side">
+  <section class="card"><h3>⚡ Action Center</h3><p>Help prevent harm to others, or scan something else.</p>
+    <div class="stack"><button class="btn red" id="report" disabled>🚩 Report as a Scam</button><button class="btn ghost" id="again">🔄 Scan Another</button></div>
+    <hr style="border:0;border-top:1px solid var(--border);margin:18px 0">
+    <h3 style="font-size:1rem">💙 Protect a Loved One</h3><p>Send a clear warning to family or a friend.</p>
+    <div class="two"><button class="btn ghost" id="wa">💬 WhatsApp</button><button class="btn ghost" id="lt">🔠 Large Text</button></div>
+  </section>
+  <section class="card"><h3>🌍 Guardian XP</h3>
+    <div style="font-weight:800;font-size:1.25rem;color:var(--primary)" id="rank">Neighborhood Watch</div>
+    <div class="bar" id="pb" role="progressbar" aria-valuemin="0" aria-valuemax="100"><i id="fill"></i></div>
+    <div style="font-weight:600" id="xpt"></div>
+    <p style="margin:10px 0 0" id="helped"></p>
+  </section>
+</aside>
+</div>
+
+<section class="sec" aria-live="polite"><h2>Plain-English breakdown</h2>
+<div class="three">
+  <article class="card"><h3>⚠️ The Verdict</h3><div id="c1"></div></article>
+  <article class="card"><h3>✋ What to do</h3><div id="c2"></div></article>
+  <article class="card"><h3>🌍 Community alerts</h3><div id="c3"></div></article>
+</div>
+<details><summary>🔬 Technical details: every check we ran</summary><div class="tel card" style="border-radius:0 0 18px 18px;box-shadow:none" id="tel"></div></details>
+</section>
+
+<section class="sec" id="radar"><h2>Community Radar <small style="font-weight:500;color:var(--muted);font-size:.9rem">(sample examples)</small></h2>
+<div class="radar">
+  <div class="card"><b>📦 Fake toll-bill SMS</b><br><span class="mono" style="font-size:.9rem">ezpass-invoice-pending.top</span><br><small>Typical of text-message scams</small></div>
+  <div class="card"><b>📞 Tax-office impersonator</b><br><span class="mono" style="font-size:.9rem">+1 888 555 0100</span><br><small>Spoofed numbers target older adults</small></div>
+  <div class="card"><b>✅ Official benefits page</b><br><span class="mono" style="font-size:.9rem">https://www.usa.gov</span><br><small>Government sites use https and .gov</small></div>
+</div></section>
+
+<section class="sec" id="guide">
+  <div class="card" style="text-align:center"><h2 style="margin-top:0">New to scams? Read the Safety Guide</h2><p style="color:var(--muted)">Simple habits that protect you and your family.</p><a class="btn" href="guide.html">Open the Safety Guide</a></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="js/analyzer.js"></script>
+<script src="js/checker.js"></script>
+</body>
+</html>
